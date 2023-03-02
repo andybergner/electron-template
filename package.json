@@ -1,0 +1,58 @@
+{
+  "name": "electron-template",
+  "productName": "Electron Template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "start:build": "electron-builder --win --x64 --ia32"
+  },
+  "build": {
+    "appId": "${name}",
+    "artifactName": "${productName}-Setup_${arch}.${ext}",
+    "asarUnpack": [
+      "exec"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "publish": null
+    },
+    "nsis": {
+      "uninstallDisplayName": "${productName}",
+      "oneClick": false
+    },
+    "mac": {
+      "artifactName": "${productName}-Setup_MAC.${ext}",
+      "category": "public.app-category.games",
+      "target": [
+        "dmg"
+      ]
+    },
+    "dmg": {
+      "backgroundColor": "#424549"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lxgg142/electron-template.git"
+  },
+  "author": "lxgg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lxgg142/electron-template/issues"
+  },
+  "homepage": "https://github.com/lxgg142/electron-template#readme",
+  "devDependencies": {
+    "electron": "^23.1.1",
+    "electron-builder": "^23.6.0"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.9",
+    "chalk": "^4.1.2",
+    "electron-localshortcut": "^3.2.1",
+    "moment": "^2.29.4"
+  }
+}
